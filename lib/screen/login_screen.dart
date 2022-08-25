@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ecommerce01/widget/textformfiled_widget.dart';
 
+import '../appColor/app_colors.dart';
 import '../widget/button_widget.dart';
-
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -11,37 +11,42 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-Widget buildTopPart(){
+Widget buildTopPart() {
   return Column(
     children: [
       Icon(Icons.menu),
       Column(
         children: [
-          MyTextFormField(hintText: 'E-mail',obscureText: true,),
+          MyTextFormField(
+            hintText: 'E-mail',
+            obscureText: true,
+          ),
         ],
-
       ),
       Column(
         children: [
-          MyTextFormField(hintText: 'Password',obscureText: true,),
+          MyTextFormField(
+            hintText: 'Password',
+            obscureText: true,
+          ),
         ],
-
       ),
       Container(
         margin: EdgeInsets.symmetric(horizontal: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(child: MyButton(onPress: (){}, color: Colors.red, text: "sigin",
-
+            Expanded(
+                child: MyButton(
+              onPress: () {},
+              color: AppColors.baseLightCyanColor,
+              text: "Sigin",
             )),
           ],
         ),
       )
     ],
-
   );
-
 }
 
 class _LoginScreenState extends State<LoginScreen> {
@@ -62,7 +67,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   buildTopPart(),
                 ],
               )
-
             ],
           ),
         ),

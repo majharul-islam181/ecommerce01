@@ -8,7 +8,8 @@ class MyButton extends StatelessWidget {
       {Key? key,
       required this.text,
       required this.color,
-      required this.onPress})
+      required this.onPress,
+      })
       : super(key: key);
 
   @override
@@ -17,6 +18,7 @@ class MyButton extends StatelessWidget {
       width: double.infinity,
       child: MaterialButton(
         height: 45,
+        hoverColor: Colors.green,
         elevation: 0,
         shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5),
