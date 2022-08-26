@@ -27,5 +27,11 @@ class SigninScreenStyle {
     color: AppColors.baseBlackColor,
     fontSize: 15,
   );
+ static const TextStyle signUpButtonStyle = TextStyle(
+    color: AppColors.baseDarkPinkColor,
+    fontSize: 20,
+  );
+
+
 
 }

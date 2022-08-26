@@ -2,12 +2,26 @@ import 'package:ecommerce01/appColor/app_colors.dart';
 import 'package:ecommerce01/screen/loginScreen/login_screen.dart';
 import 'package:ecommerce01/widget/button_widget.dart';
 import 'package:flutter/material.dart';
-
 import '../../styles/signup_screen_style.dart';
 import '../../widget/textformfiled_widget.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({Key? key}) : super(key: key);
+
+  Widget buildSocialButton(Widget child, void Function()? onPressed1) {
+    //child can be picture/icon
+    return MaterialButton(
+      shape: OutlineInputBorder(
+        borderSide: BorderSide(
+          width: 0.548,
+          color: AppColors.baseGrey40Color,
+        ),
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      onPressed: onPressed1,
+      child: child,
+    );
+  }
 
   Widget buildTopPart() {
     return Column(
@@ -20,6 +34,7 @@ class SignupScreen extends StatelessWidget {
             ),
           ],
         ),
+
         Column(
           children: [
             MyTextFormField(
@@ -81,7 +96,7 @@ class SignupScreen extends StatelessWidget {
 
   Widget buildBottomPart() {
     return Container(
-      height: 50,
+      height: 200,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -90,24 +105,35 @@ class SignupScreen extends StatelessWidget {
             style: SigninScreenStyle.signInSocialStyle,
           ),
           SizedBox(
-            height: 10,
+            height: 20,
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Material(
-                  shape: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 0.548,
-                      color: AppColors.baseGrey40Color,
-                    ),
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  
+                buildSocialButton(Icon(Icons.facebook), () {}),
+                SizedBox(
+                  width: 5,
                 ),
+                buildSocialButton(Icon(Icons.whatsapp), () {}),
+                SizedBox(
+                  width: 5,
+                ),
+                buildSocialButton(Icon(Icons.reddit), () {}),
               ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(20),
+            child: MaterialButton(
+              onPressed: () {},
+              child: Center(
+                child: Text(
+                  'Sign Up',
+                  style: SigninScreenStyle.signUpButtonStyle,
+                ),
+              ),
             ),
           ),
         ],
